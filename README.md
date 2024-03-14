@@ -18,3 +18,34 @@ This web application will function as a gym workout log for users to track their
 -	Access to a vast exercise library for reference.
 -	Analyse training data to optimize routines.
 
+## Milestone
+- Day 1: Project Initiation and Planning
+-   	Establish Project goals and Features
+-  	  Designing a wireframe for the gym web application User Interface
+- Day 2: Developing a Low Fidelity Prototype
+-   	Collecting all the necessary information and assets for the UI
+- Day 3: Developing a High-Fidelity Prototype
+-   	Making a complete high-fidelity prototype with User flow
+- Day-4: Developing the Front-End using a Framework.
+-   	Developing the Homepage
+- Day-5: Developing the Front-End using a Framework.
+-   	Developing the Login-Page
+- Day-6: Developing the Front-End using a Framework.
+-   	Developing the Saved Workout Page
+- Day-6: Developing the Front-End using a Framework.
+-   	Developing the User Profile Page
+- Day-7: Developing the Front-End using a Framework.
+-   	Developing the Notification Page
+-   	Developing the History Logs Page
+- Day-8: Developing the Front-End using a Framework.
+-   	Developing the Login Details
+-   	Developing the User Credentials during login
+- Day-9: Final Routing and Schema defining.
+-   	Routing Through Pages
+-   	Schema User Login
+-   	Add workouts schema
+- Day-10: Defining Routes for backend
+-   	Backend Routes for all requests
+- Day-11: Calling all the Routes back in frontend
+-   	Fetching the requests in the frontend
+- Day-13: Debugging 
