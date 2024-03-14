@@ -8,12 +8,7 @@ import { Category } from "iconsax-react";
 const Sidebar = () => {
   return (
     <div className="SidebarParent">
-      <div>
-        <img
-          className="logo"
-          src="https://i.imgur.com/z6spKK9_d.webp?maxwidth=760&fidelity=grand"
-        ></img>
-      </div>
+      
       <div className="parent-container">
         <div className="SideBarIcons">
           {/* HOME ICON */}
