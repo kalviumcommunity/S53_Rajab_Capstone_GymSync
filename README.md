@@ -14,7 +14,7 @@ This web application will function as a gym workout log for users to track their
 
 ## Benefits:
 -	Improved workout organization and planning.
--	Track progress and stay motivated.
+-	Track progress and stay motivated
 -	Access to a vast exercise library for reference.
 -	Analyse training data to optimize routines.
 
