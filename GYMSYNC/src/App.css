@@ -1,0 +1,70 @@
+body {
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+:root {
+    --primary-color: #B8FF00;
+    --secondary-color: #252525;
+    --background-color: #121212
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.SidebarParent {
+    margin-left: 3%;
+    margin-top: 4%;
+    position: fixed;
+}
+
+/* Parent Icons Div */
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    height: 70vh;
+    margin-left: 15%;
+}
+
+/* Sidebar Icons */
+.SideBarIcons {
+    background-color: var(--secondary-color);
+    width: max-content;
+    border-radius: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.SideBarIcons:hover {
+    background-color: var(--primary-color);
+}
+
+/* IconsImage */
+.InsideIcons {
+    display: flex;
+    justify-content: center;
+}
+
+/* Main Logo */
+.logo {
+    width: 70px;
+}
