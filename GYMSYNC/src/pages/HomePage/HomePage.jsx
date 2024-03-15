@@ -1,6 +1,6 @@
 import { SearchNormal1 } from "iconsax-react";
 import React from "react";
-const Home = () => {
+const HomePage = () => {
   return (
     <div className="AllContents">
       <div className="parentTopContentTexts ">
@@ -79,4 +79,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

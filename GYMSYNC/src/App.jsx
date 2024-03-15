@@ -2,13 +2,12 @@ import { Home } from "iconsax-react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import TopContent from "./pages/HomePage/TopContent";
-
+import HomePage from "./pages/HomePage/HomePage";
 function App() {
   return (
     <>
       <Navbar />
-      <Home/>
+      <HomePage />
       <Sidebar />
     </>
   );
