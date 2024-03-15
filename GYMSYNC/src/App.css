@@ -15,15 +15,11 @@
 :root {
     --primary-font: "Saira Condensed", sans-serif;
     --sub-heading-font: "Saira", sans-serif;
-
 }
-
 
 ::-webkit-scrollbar {
     width: 5px;
 }
-
-
 
 ::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
@@ -36,7 +32,6 @@
 }
 
 body {
-    /* height: 100vh; */
     background-color: var(--background-color);
     user-select: none;
 }
@@ -140,6 +135,7 @@ body {
 
 }
 
+
 /* searchbar */
 .searchbarDiv {
     display: flex;
@@ -165,8 +161,8 @@ body {
 }
 
 .categories {
-    font-size: 0.9vmax;
-    width: 6vmax;
+    font-size: 2vmin;
+    width: 15vmin;
     border-radius: 20px;
     background-color: var(--secondary-color);
     border: none;
@@ -179,7 +175,8 @@ body {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    width: 30vmax;
+    width: max-content;
+    gap: 20px;
 }
 
 /* CARD DIV */
@@ -193,7 +190,6 @@ body {
     position: absolute;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     top: 14vmax;
@@ -233,7 +229,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .workoutTexts>h1 {
         font-family: var(--primary-font);
         color: white;
@@ -285,9 +281,39 @@ body {
 
 }
 
+
+
 @media only screen and (max-width: 600px) {
     .SidebarParent {
         display: none;
+    }
+
+    .childTopContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .firstChildTopContent {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .topContentTexts>h1 {
+        color: white;
+        font-family: var(--primary-font);
+        font-weight: 900;
+        font-size: 10vmin;
+    }
+
+    .topContentTexts>p {
+        color: var(--secondary-font-color);
+        font-family: var(--sub-heading-font);
+        font-weight: 100;
+        font-size: 3vmin;
     }
 
     .topBar {
@@ -319,8 +345,9 @@ body {
         display: none;
     }
 
+
+
     .topBar {
-        /* display: none; */
         display: flex;
         justify-content: center;
     }
@@ -338,17 +365,68 @@ body {
         top: 20vmax;
         place-content: center;
         width: 68%;
+        left: 6%;
     }
 
-
-
     .Image {
-        width: 100%;
+        width: 130%;
         height: 60%;
         object-fit: cover;
         border-radius: 1vmax;
     }
 
+    /* .categories {
+        font-size: 3vmin;
+        padding: 2px 40px;
+        width: 45vmin;
+        border-radius: 20px;
+        background-color: var(--secondary-color);
+        border: none;
+        color: var(--secondary-font-color);
+        font-family: var(--sub-heading-font);
+    }
 
 
+    .CategoryDiv {
+        width: 100%;
+        position: absolute;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        overflow-y: scroll;
+    } */
+
+    .CategoryDiv::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .categories {
+        font-size: 4vmin;
+        padding: 2px 40px;
+        width: 45vmin;
+        border-radius: 20px;
+        background-color: var(--secondary-color);
+        border: none;
+        color: var(--secondary-font-color);
+        font-family: var(--sub-heading-font);
+    }
+
+
+    .CategoryDiv {
+        width: 100%;
+        position: absolute;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        overflow-y: scroll;
+        overflow-y: hidden;
+    }
+
+    .CategoryDiv::-webkit-scrollbar {
+        display: none;
+    }
 }
