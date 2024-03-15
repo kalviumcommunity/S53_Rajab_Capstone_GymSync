@@ -148,16 +148,21 @@ body {
     align-self: center;
 }
 
-z .searchBar {
+.searchBar {
     background-color: var(--secondary-color);
     border: none;
     width: 15vmax;
     padding: 5.5% 10%;
     border-radius: 20px;
+    color: white;
+}
+
+.searchBar:focus {
+    outline: none;
 }
 
 .categories {
-    font-size: 1vmax;
+    font-size: 0.9vmax;
     width: 6vmax;
     border-radius: 20px;
     background-color: var(--secondary-color);
