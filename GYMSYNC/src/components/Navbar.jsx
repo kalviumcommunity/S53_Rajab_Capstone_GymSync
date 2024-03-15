@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="topBarParent">
       <div className="topBar">
-        <div>
+        <div className="logobar">
           <img
             className="logo"
             src="https://i.imgur.com/z6spKK9_d.webp?maxwidth=760&fidelity=grand"

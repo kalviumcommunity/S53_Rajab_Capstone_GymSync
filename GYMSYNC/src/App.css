@@ -18,12 +18,6 @@
 
 }
 
-body {
-    height: 100vh;
-    background-color: var(--background-color);
-    user-select: none;
-}
-
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -40,6 +34,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color);
 }
+
+body {
+    /* height: 100vh; */
+    background-color: var(--background-color);
+    user-select: none;
+}
+
+
 
 /* topBar */
 
@@ -116,6 +118,7 @@ body {
     justify-content: center;
     align-items: center;
     justify-content: space-around;
+    /* width: max-content; */
 }
 
 .topContentTexts {
@@ -179,9 +182,133 @@ body {
     width: 30vmax;
 }
 
+/* CARD DIV */
+
+.parentCard {
+    display: flex;
+    justify-content: center;
+}
+
+.Gridcards {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    top: 14vmax;
+    width: max-content;
+    left: 15%;
+}
+
+.Image {
+    width: 18vmax;
+    height: 17vmax;
+    object-fit: cover;
+    border-radius: 1vmax;
+
+}
+
+.workoutTexts {
+    line-height: 10px;
+}
+
+.workoutTexts>h1 {
+    font-family: var(--primary-font);
+    color: white;
+    font-size: 2rem;
+}
+
+.workoutTexts>p {
+    font-family: var(--sub-heading-font);
+    color: var(--secondary-font-color);
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .workoutTexts>h1 {
+        font-family: var(--primary-font);
+        color: white;
+        font-size: 1.45rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .workoutTexts>h1 {
+        font-family: var(--primary-font);
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .Gridcards {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-row-gap: 30px;
+        top: 20vmax;
+        place-content: center;
+        width: 80%;
+    }
+
+
+
+    .Image {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 1vmax;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .Gridcards {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-row-gap: 30px;
+        top: 20vmax;
+        place-content: center;
+        width: 80%;
+    }
+
+
+
+    .Image {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 1vmax;
+    }
+
+}
+
 @media only screen and (max-width: 600px) {
     .SidebarParent {
         display: none;
+    }
+
+    .topBar {
+        background-color: var(--background-color);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 999;
+        height: 60px;
+        margin-top: -8px;
+    }
+
+    .logobar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .AllContents {
+        z-index: 12;
     }
 
     .searchBar {
@@ -197,6 +324,31 @@ body {
         display: flex;
         justify-content: center;
     }
+
+    .parentCard {
+        display: flex;
+    }
+
+    .Gridcards {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-row-gap: 30px;
+        top: 20vmax;
+        place-content: center;
+        width: 68%;
+    }
+
+
+
+    .Image {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 1vmax;
+    }
+
 
 
 }
