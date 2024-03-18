@@ -15,6 +15,7 @@
 :root {
     --primary-font: "Saira Condensed", sans-serif;
     --sub-heading-font: "Saira", sans-serif;
+    --fira-font: "Fira Sans Condensed", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -36,11 +37,7 @@ body {
     user-select: none;
 }
 
-
-
 /* topBar */
-
-
 .topBarParent {
     display: flex;
     justify-content: center;
@@ -58,7 +55,7 @@ body {
 
 .SidebarParent {
     margin-left: 3%;
-    margin-top: 4%;
+    margin-top: 10%;
     position: fixed;
 }
 
@@ -202,8 +199,11 @@ body {
     height: 17vmax;
     object-fit: cover;
     border-radius: 1vmax;
-
 }
+
+
+
+
 
 .workoutTexts {
     line-height: 10px;
@@ -280,8 +280,6 @@ body {
     }
 
 }
-
-
 
 @media only screen and (max-width: 600px) {
     .SidebarParent {
@@ -375,28 +373,6 @@ body {
         border-radius: 1vmax;
     }
 
-    /* .categories {
-        font-size: 3vmin;
-        padding: 2px 40px;
-        width: 45vmin;
-        border-radius: 20px;
-        background-color: var(--secondary-color);
-        border: none;
-        color: var(--secondary-font-color);
-        font-family: var(--sub-heading-font);
-    }
-
-
-    .CategoryDiv {
-        width: 100%;
-        position: absolute;
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        overflow-y: scroll;
-    } */
-
     .CategoryDiv::-webkit-scrollbar {
         display: none;
     }
@@ -429,4 +405,104 @@ body {
     .CategoryDiv::-webkit-scrollbar {
         display: none;
     }
+}
+
+/* END OF HOMEPAGE CSS  */
+/* ---------------------------------- */
+/* HISTORY LOGS CSS BEGINS HERE*/
+.HistoryDiv {
+    background-color: var(--background-color);
+    height: 100vh;
+    /* z-index: -1; */
+}
+
+.AccordionMainDiv {
+    width: 70%;
+    color: white;
+
+}
+
+.AccordionParentDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.AccordionPanel>div {
+    display: flex;
+    justify-content: center;
+}
+
+.accordionHr {
+    width: 95%;
+    border: 1px solid var(--secondary-font-color)
+}
+
+.AccordionComponent {
+    background-color: #252525;
+    border-radius: 15px;
+    border: none;
+    font-family: var(--fira-font);
+    margin-top: 1%;
+    padding: 0.5% 0px;
+}
+
+.BoxAccordion {
+    font-size: 1.5rem;
+}
+
+.AccordionPanel {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.historyTopTexts {
+    line-height: 3vmax;
+}
+
+.historySearch {
+    background-color: var(--secondary-color);
+    border: none;
+    width: 15vmax;
+    padding: 4% 10%;
+    border-radius: 20px;
+    color: white;
+}
+
+.accordionTextParent>div {
+    margin-top: 2%;
+    width: 80%;
+}
+
+.accordionTextParent {
+    display: flex;
+    justify-content: center;
+}
+
+.accordionTextChild {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.leftTexts {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.rightTexts {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
+@media only screen and(min-width:370px)and (max-width: 600px) {
+    .historyTopTexts {
+    
+        color: red;
+    }
+    
 }
