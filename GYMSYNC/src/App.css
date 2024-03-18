@@ -376,6 +376,10 @@ body {
     .CategoryDiv::-webkit-scrollbar {
         display: none;
     }
+
+    .AccordionMainDiv {
+        margin-top: 10%;
+    }
 }
 
 @media only screen and (max-width: 500px) {
