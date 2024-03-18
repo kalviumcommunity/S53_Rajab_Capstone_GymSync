@@ -454,7 +454,7 @@ body {
 }
 
 .AccordionPanel {
-    font-size: 1rem;
+    font-size: 1vmax;
     font-weight: 400;
 }
 
@@ -473,7 +473,7 @@ body {
 
 .accordionTextParent>div {
     margin-top: 2%;
-    width: 80%;
+    width: 90%;
 }
 
 .accordionTextParent {
@@ -499,10 +499,49 @@ body {
     width: 20%;
 }
 
-@media only screen and(min-width:370px)and (max-width: 600px) {
-    .historyTopTexts {
-    
-        color: red;
+@media only screen and (max-width: 600px) {
+    .accordionTextParent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: scroll;
+        padding-bottom: 20px;
     }
-    
+
+    .accordionTextParent>div {
+        margin-top: 2%;
+        width: 130%;
+    }
+
+    .accordionTextChild {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+    }
+
+    .leftTexts {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+    }
+
+    .rightTexts {
+        width: 30%;
+    }
+
+    .accordionTextParent::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .accordionTextParent::-webkit-scrollbar-thumb {
+        background: var(--secondary-font-color);
+        border-radius: 20px;
+    }
+
+    .accordionTextParent::-webkit-scrollbar-thumb:hover {
+        background: var(--secondary-color);
+    }
+
+
 }

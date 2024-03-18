@@ -10,10 +10,10 @@ function App() {
     <>
       <Navbar />
       <Sidebar />
-      <HomePage />
-      {/* <ChakraProvider>
+      {/* <HomePage /> */}
+      <ChakraProvider>
         <History />
-      </ChakraProvider> */}
+      </ChakraProvider>
     </>
   );
 }

@@ -17,7 +17,7 @@ const History = () => {
             <div className="childTopContent">
               <div className="topContentTexts historyTopTexts">
                 <h1>HISTORY LOGS</h1>
-                <p>Let's Crush Today's Workout!</p>
+                {/* <p>Let's Crush Today's Workout!</p> */}
               </div>
               <div className="searchbarDiv">
                 <input
