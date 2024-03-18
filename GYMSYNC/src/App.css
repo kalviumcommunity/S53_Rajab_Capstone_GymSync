@@ -547,5 +547,40 @@ body {
         background: var(--secondary-color);
     }
 
+}
 
+/* NOTIFICATION DIV */
+.NotificationDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+.notificationParentDiv {
+    width: 70%;
+}
+
+.notificationIndividual {
+    margin-top: 2%;
+    border-radius: 1vmax;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px 3vmax;
+
+}
+
+.notifHeader>h1 {
+    font-family: var(--fira-font);
+    font-weight: 600;
+    font-size: 1.5vmax;
+}
+
+.subTextsNotif {
+    font-size: 0.95vmax;
+
+}
+
+.subTextsNotif {
+    display: flex;
+    justify-content: space-between;
 }
