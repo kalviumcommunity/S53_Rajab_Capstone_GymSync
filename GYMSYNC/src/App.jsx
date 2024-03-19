@@ -5,18 +5,20 @@ import History from "./pages/History/History";
 import HomePage from "./pages/HomePage/HomePage";
 import { ChakraProvider } from "@chakra-ui/react";
 import Notification from "./pages/Notification/Notification";
+import Profile from "./pages/UserProfile/Profile";
 function App() {
   return (
     <>
       <Navbar />
+      {/* <HomePage /> */}
       <Sidebar />
-      <HomePage />
       {/* <ChakraProvider>
         <History />
       </ChakraProvider> */}
-      {/* <ChakraProvider>
+      <ChakraProvider>
         <Notification />
-      </ChakraProvider> */}
+      </ChakraProvider>
+      {/* <Profile /> */}
     </>
   );
 }
