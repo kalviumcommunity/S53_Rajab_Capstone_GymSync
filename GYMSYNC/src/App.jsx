@@ -4,21 +4,15 @@ import Sidebar from "./components/Sidebar";
 import History from "./pages/History/History";
 import HomePage from "./pages/HomePage/HomePage";
 import { ChakraProvider } from "@chakra-ui/react";
-import Notification from "./pages/Notification/Notification";
-import Profile from "./pages/UserProfile/Profile";
+import AllRoutes from "./routes/AllRoutes";
+import { Route, Routes } from "react-router-dom";
+
 function App() {
   return (
     <>
       <Navbar />
-      {/* <HomePage /> */}
       <Sidebar />
-      {/* <ChakraProvider>
-        <History />
-      </ChakraProvider> */}
-      <ChakraProvider>
-        <Notification />
-      </ChakraProvider>
-      {/* <Profile /> */}
+      <AllRoutes />
     </>
   );
 }
