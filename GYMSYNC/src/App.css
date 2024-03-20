@@ -951,7 +951,7 @@ body {
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        color: var(--secondary-font-color);
+        color: white;
         font-family: var(--sub-heading-font);
         font-size: 10px;
         font-weight: 100;
