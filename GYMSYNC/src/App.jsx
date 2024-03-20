@@ -6,12 +6,14 @@ import HomePage from "./pages/HomePage/HomePage";
 import { ChakraProvider } from "@chakra-ui/react";
 import AllRoutes from "./routes/AllRoutes";
 import { Route, Routes } from "react-router-dom";
+import MobileNavbar from "./components/MobileNavbar";
 
 function App() {
   return (
     <>
       <Navbar />
       <Sidebar />
+      <MobileNavbar />
       <AllRoutes />
     </>
   );
