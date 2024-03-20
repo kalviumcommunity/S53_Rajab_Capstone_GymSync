@@ -57,6 +57,7 @@ body {
     margin-left: 3%;
     margin-top: 10%;
     position: fixed;
+    z-index: 999;
 }
 
 /* Parent Icons Div */
@@ -432,6 +433,8 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 2%;
+    flex-wrap: wrap;
+
 }
 
 .AccordionPanel>div {
@@ -583,4 +586,297 @@ body {
 .subTextsNotif {
     display: flex;
     justify-content: space-between;
+}
+
+/* ----------------------------------- */
+/* profile page */
+.flex {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileParentGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.profileChildGrids {
+    background-color: #252525;
+    padding: 10vmax 10.5vmax;
+    border-radius: 1vmax;
+    position: relative;
+}
+
+.userCard {
+    background-image: url("https://i.imgur.com/lGqcqZ4.png");
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bgprofiles {
+    background-image: url("https://i.imgur.com/4hrmS1Q.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.bgprofiles {
+    position: relative;
+    font-family: var(--sub-heading-font);
+    color: white;
+}
+
+.trainerCard {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* left: 30%; */
+}
+
+.trainerCardHeader {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.75vmax;
+    text-align: center;
+}
+
+.trainerDp {
+    display: flex;
+    justify-content: center;
+}
+
+.trainerDp>img {
+    width: 8vmax;
+    height: 8vmax;
+}
+
+.trainerName {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 900;
+    font-style: italic;
+    font-size: 2.5vmax;
+    width: max-content;
+}
+
+.profileDp {
+    position: absolute;
+    width: 30%;
+    bottom: 0px;
+    left: 20px;
+}
+
+.gymIcon {
+    position: absolute;
+    width: 30%;
+    bottom: 0px;
+    right: 20px;
+    width: 6%;
+    bottom: 1vmax;
+}
+
+.userInfo {
+    font-family: var(--sub-heading-font);
+    font-style: italic;
+    position: absolute;
+    font-size: 2vmax;
+    top: 3vmax;
+    right: 2vmax;
+    line-height: 0px;
+    background: #000000;
+    background: linear-gradient(to right, #000000 55%, transparent 110%);
+    background-clip: inherit;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.userInfo>h1 {
+    font-weight: 1000;
+
+}
+
+.userInfo>p {
+    font-size: 62%;
+}
+
+.picker {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    transform: translateX(-50%);
+    height: max-content;
+}
+
+.scale {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    height: max-content;
+}
+
+.scale>div {
+    display: flex;
+    justify-content: center;
+}
+
+.pickerImg {
+    height: 20vmax;
+}
+
+.scaleImg {
+    position: absolute;
+    top: 13vmax;
+    width: 20vmax;
+}
+
+
+
+.heightDiv {
+    position: absolute;
+    line-height: 0%;
+    top: 7.3vmax;
+    font-size: 2vmax;
+}
+
+.weightDiv {
+    position: absolute;
+    line-height: 0px;
+    top: 4.3vmax;
+    font-size: 2vmax;
+}
+
+.heightDiv>h1 {
+    color: var(--primary-color);
+}
+
+.weightDiv>h1 {
+    color: var(--primary-color);
+    font-size: 6vmax;
+}
+
+.scaleImgDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.heightDiv>p {
+    font-size: 1vmax;
+    text-align: center;
+}
+
+.weightDiv>p {
+    font-size: 1vmax;
+    text-align: center;
+}
+
+.BMIDiv {
+    position: absolute;
+    text-align: center;
+    left: 28%;
+    transform: translateX(-30%);
+    transform: translateY(-50%);
+    height: max-content;
+    line-height: 80%;
+    font-family: var(--sub-heading-font);
+}
+
+
+
+.BMIDiv>h1 {
+    font-size: 7vmax;
+    color: var(--primary-color);
+}
+
+.BMIHeader {
+    font-size: 2vmax;
+    font-style: italic;
+}
+
+.statusBmi {
+    font-size: 2.12vmax;
+    font-style: italic;
+    font-weight: 600;
+
+}
+
+
+
+@media only screen and (max-width:250px) {
+    .profileChildGrids {
+        background-color: #252525;
+        padding: 10vmax;
+        border-radius: 1vmax;
+    }
+
+}
+
+@media only screen and (max-width:1000px) {
+    .profileParentGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+}
+
+@media only screen and (max-width:280px) {
+    .profileParentGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .profileChildGrids {
+        background-color: #252525;
+        padding: 10vmax 9vmax;
+        border-radius: 1vmax;
+    }
+
+    .scaleImg {
+        position: absolute;
+        top: 13vmax;
+        width: 18vmax;
+    }
+
+}
+
+
+@media only screen and (max-height:600px) {
+    .profileParentGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .userInfo {
+        font-family: var(--sub-heading-font);
+        font-style: italic;
+        position: absolute;
+        font-size: 2vmax;
+        top: 2.5rem;
+        right: 4rem;
+        line-height: 0px;
+        background: #000000;
+        background: linear-gradient(to right, #000000 55%, transparent 110%);
+        background-clip: inherit;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@media only screen and (min-height:1366px) {
+    .profileParentGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
 }
