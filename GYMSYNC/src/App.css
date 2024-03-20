@@ -11,6 +11,7 @@
     --background-color: #121212;
     --font-color: #ffffff;
     --secondary-font-color: #838383;
+    --mobile-primary-color: #171717;
 }
 
 /* FONTS */
@@ -900,11 +901,75 @@ body {
     }
 }
 
+.mobileBarParent {
+    display: none;
+}
+
 @media only screen and (min-height:1366px) {
     .profileParentGrid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 10px;
         grid-row-gap: 10px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    body {
+        margin: 0;
+    }
+
+    .mobileBarParent {
+        display: block;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+
+    .mobileParent-container {
+        display: flex;
+        z-index: 999;
+        position: fixed;
+        justify-content: space-around;
+        bottom: 0;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        /* height: 103px; */
+        /* background-color: var(--secondary-color); */
+        background: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(10.5px);
+        -webkit-backdrop-filter: blur(4.5px);
+        border-radius: 10px;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .iconDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: var(--secondary-font-color);
+        font-family: var(--sub-heading-font);
+        font-size: 10px;
+        font-weight: 100;
+    }
+
+    .bgIcons {
+        /* padding-bottom: 20px; */
+        /* margin: 10px; */
+        width: 44px;
+        height: 48px;
+    }
+
+    .insideIcons {
+        margin: 10px;
+    }
+
+    .iconDiv p {
+        /* padding-bottom: 20px; */
+        margin: 0 0;
     }
 }
