@@ -1,4 +1,5 @@
 import React from "react";
+import "./Components.css";
 
 const Navbar = () => {
   return (
@@ -12,7 +13,7 @@ const Navbar = () => {
         </div>
         <div>
           <img
-          className="userProfile"
+            className="userProfile"
             src="https://cdn-icons-png.freepik.com/512/219/219969.png"
             style={{ width: "40px" }}
           ></img>
