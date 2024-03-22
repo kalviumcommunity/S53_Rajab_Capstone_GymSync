@@ -11,9 +11,6 @@ import MobileNavbar from "./components/MobileNavbar";
 function App() {
   return (
     <>
-      <Navbar />
-      <Sidebar />
-      <MobileNavbar />
       <AllRoutes />
     </>
   );

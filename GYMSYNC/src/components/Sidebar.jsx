@@ -14,10 +14,7 @@ const Sidebar = () => {
   return (
     <div className="SidebarParent">
       <div className="parent-container">
-        <Link
-          style={{ textDecoration: "none" }}
-          to="/"
-        >
+        <Link style={{ textDecoration: "none" }} to="/">
           <div className="SideBarIcons">
             {/* HOME ICON */}
             <Home2
@@ -57,7 +54,7 @@ const Sidebar = () => {
             />{" "}
           </div>
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/home">
+        <Link style={{ textDecoration: "none" }} to="/">
           <div className="SideBarIcons">
             {/* SETTINGS ICON */}
             <Category
