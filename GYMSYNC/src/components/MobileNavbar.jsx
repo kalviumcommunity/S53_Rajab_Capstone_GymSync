@@ -71,7 +71,7 @@ const MobileNavbar = () => {
               </div>
             </div>
           </Link>
-          <Link style={{ textDecoration: "none" }} to="/home">
+          <Link style={{ textDecoration: "none" }} to="/">
             <div className="mobileBarIcons">
               {/* SETTINGS ICON */}
               <div className="iconDiv">

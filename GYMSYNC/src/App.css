@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* ALL COLORS */
 :root {
@@ -12,6 +11,7 @@
     --font-color: #ffffff;
     --secondary-font-color: #838383;
     --mobile-primary-color: #171717;
+    --input-border-color: #3C3C3C
 }
 
 /* FONTS */
@@ -19,6 +19,7 @@
     --primary-font: "Saira Condensed", sans-serif;
     --sub-heading-font: "Saira", sans-serif;
     --fira-font: "Fira Sans Condensed", sans-serif;
+    --register-font: "Fira Sans Extra Condensed", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -969,7 +970,260 @@ body {
     }
 
     .iconDiv p {
-        /* padding-bottom: 20px; */
         margin: 0 0;
     }
+}
+
+/* -----------------SIGNUP------------------ */
+.registerDiv {
+    height: 100vh;
+}
+
+.RegisterChildDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.leftRegister {
+    background-color: var(--primary-color);
+    width: 35vmax;
+    height: 40vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.welcomeRegText {
+    line-height: 150%;
+
+}
+
+.welcomeRegText>h1 {
+    color: var(--secondary-color);
+    margin-left: 6%;
+    font-size: 6vmax;
+    font-family: var(--register-font);
+    font-weight: 900;
+}
+
+.rightRegister {
+    background-color: var(--mobile-primary-color);
+    height: 40vmax;
+    width: 35vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.credentialsParent {
+    color: white;
+    height: 100%;
+    width: 35vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.credentialsParent>h1 {
+    font-family: var(--register-font);
+    font-weight: 700;
+    text-align: center;
+    font-size: 3vmax;
+    margin: 2vmin;
+}
+
+form {
+    width: 25vmax;
+}
+
+.formParent {
+    display: flex;
+    justify-content: center;
+}
+
+.inputfields {
+    background-color: transparent;
+    border: 1px solid var(--input-border-color);
+    border-radius: 0.5vmax;
+    width: 95%;
+    height: 2.5vmax;
+    color: white;
+    padding-left: 5%;
+    font-family: var(--sub-heading-font);
+
+}
+
+.inputfields:focus {
+    border: 1px solid var(--primary-color);
+    -webkit-transition: 0.3s;
+    outline: none;
+}
+
+.inputfieldParentDiv {
+    margin-bottom: 1vmax;
+}
+
+.inputfieldParentDiv>label {
+    font-family: var(--sub-heading-font);
+    font-weight: 100;
+    font-size: 0.75vmax;
+    text-align: left;
+}
+
+.submitBtnDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.submitBtn {
+    margin-top: 0.75vmax;
+    width: 100%;
+    background-color: var(--primary-color);
+    font-family: var(--sub-heading-font);
+    font-weight: 600;
+    font-size: 1vmax;
+    height: 2.5vmax;
+    border-radius: 5px;
+    border: none;
+}
+
+.GoogleBtnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.googleBtnChildDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.googleBtnChildDiv>div {
+    align-items: center;
+    width: 15vmax;
+    justify-content: space-around;
+    display: flex;
+}
+
+.googleBtn {
+    width: 72%;
+    border-radius: 5px;
+    border: none;
+    margin-top: 0.75vmax;
+    height: 2.5vmax;
+    font-size: 1vmax;
+    background-color: white;
+}
+
+.googleImg {
+    width: 1vmax;
+    height: 1vmax;
+}
+
+.AppleImg {
+    width: 0l.5vmax;
+    height: 1vmax;
+}
+
+.hrReg {
+    margin-top: 2vmax;
+    border: 1px solid var(--input-border-color);
+    width: 70%;
+}
+
+@media only screen and (max-width:900px) {
+
+    .inputfieldParentDiv {
+        margin-bottom: 0.25vmax;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .inputfieldParentDiv>label {
+        font-family: var(--sub-heading-font);
+        font-weight: 100;
+        font-size: 1vmax;
+        text-align: left;
+    }
+
+    .leftRegister {
+        display: none;
+    }
+
+    .rightRegister {
+        background-color: var(--mobile-primary-color);
+        height: 65vmax;
+        width: 85vmin;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .credentialsParent {
+        color: white;
+        height: 100%;
+        width: 85vmin;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .credentialsParent>h1 {
+        font-size: 6vmax;
+        margin-bottom: 0px;
+    }
+
+    form {
+        width: 65vmin;
+    }
+
+    .inputfields {
+        background-color: transparent;
+        border: 1px solid var(--input-border-color);
+        border-radius: 0.5vmax;
+        height: 4.0vmax;
+        color: white;
+        width: 95%;
+        padding-left: 5%;
+        font-family: var(--sub-heading-font);
+
+    }
+
+    .inputfieldParentDiv {
+        margin-bottom: 5vmin;
+    }
+
+    .submitBtn {
+        margin-top: 0.75vmax;
+        width: 100%;
+        background-color: var(--primary-color);
+        font-family: var(--sub-heading-font);
+        font-weight: 600;
+        font-size: 1.5vmax;
+        height: 4vmax;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .googleBtn {
+        width: 76%;
+        border-radius: 5px;
+        border: none;
+        margin-top: 0.75vmax;
+        height: 5.5vmin;
+        font-size: 2vmin;
+        background-color: white;
+    }
+
+    .googleBtnChildDiv>div {
+        align-items: center;
+        width: 25vmin;
+        justify-content: space-around;
+        display: flex;
+    }
+
 }

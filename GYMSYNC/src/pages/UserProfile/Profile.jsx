@@ -1,9 +1,14 @@
 import React from "react";
 import { SearchNormal1 } from "iconsax-react";
-
+import Navbar from "../../components/Navbar";
+import Sidebar from "../../components/Sidebar";
+import MobileNavbar from "../../components/MobileNavbar";
 const Profile = () => {
   return (
     <div>
+       <Navbar />
+      <Sidebar />
+      <MobileNavbar />
       <div className="firstChildTopContent">
         <div className="flex">
           <div className="profileParentGrid">
@@ -67,11 +72,11 @@ const Profile = () => {
             </div>
             <div className="profileChildGrids bgprofiles">
               <div className="BMIParentDiv">
-              <div className="BMIDiv">
-                <p className="BMIHeader">BMI</p>
-                <h1>21</h1>
-                <p className="statusBmi">NORMAL</p>
-              </div>
+                <div className="BMIDiv">
+                  <p className="BMIHeader">BMI</p>
+                  <h1>21</h1>
+                  <p className="statusBmi">NORMAL</p>
+                </div>
               </div>
             </div>
           </div>
