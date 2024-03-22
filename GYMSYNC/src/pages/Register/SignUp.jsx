@@ -20,15 +20,27 @@ const SignUp = () => {
                 <form>
                   <div className="inputfieldParentDiv">
                     <label>Name</label>
-                    <input className="inputfields" type="text"></input>
+                    <input
+                      className="inputfields"
+                      aria-label="Enter Your Name"
+                      type="text"
+                    ></input>
                   </div>
                   <div className="inputfieldParentDiv">
                     <label>Email Address</label>
-                    <input className="inputfields" type="text"></input>
+                    <input
+                      className="inputfields"
+                      aria-label="Enter Your Email Address"
+                      type="text"
+                    ></input>
                   </div>
                   <div className="inputfieldParentDiv">
                     <label>Password</label>
-                    <input className="inputfields" type="password"></input>
+                    <input
+                      className="inputfields"
+                      aria-label="Enter Your Password"
+                      type="password"
+                    ></input>
                   </div>
                   <div className="submitBtnDiv">
                     <button type="submit" className="submitBtn">
