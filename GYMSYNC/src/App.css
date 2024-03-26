@@ -11,7 +11,7 @@
     --font-color: #ffffff;
     --secondary-font-color: #838383;
     --mobile-primary-color: #171717;
-    --input-border-color: #3C3C3C
+    --input-border-color: #3C3C3C;
 }
 
 /* FONTS */
@@ -995,6 +995,28 @@ body {
     justify-content: center;
 }
 
+.loginLogoParent {
+    display: flex;
+    justify-content: center;
+
+}
+
+.loginLogo {
+    width: 4vmax;
+}
+
+.leftLogin {
+    background-image: url("https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: -200px;
+    width: 35vmax;
+    height: 40vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 .welcomeRegText {
     line-height: 150%;
@@ -1054,6 +1076,20 @@ form {
     padding-left: 5%;
     font-family: var(--sub-heading-font);
 
+}
+
+.userAlready {
+    text-align: center;
+    font-size: 0.8vmax;
+    margin-top: 1vmax;
+    font-family: var(--fira-font);
+}
+
+.userAlreadyP {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
 }
 
 .inputfields:focus {
@@ -1130,7 +1166,7 @@ form {
 }
 
 .hrReg {
-    margin-top: 2vmax;
+    /* margin-top: 2vmax; */
     border: 1px solid var(--input-border-color);
     width: 70%;
 }
@@ -1174,7 +1210,7 @@ form {
 
     .credentialsParent>h1 {
         font-size: 6vmax;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
     }
 
     form {
@@ -1225,5 +1261,6 @@ form {
         justify-content: space-around;
         display: flex;
     }
+
 
 }

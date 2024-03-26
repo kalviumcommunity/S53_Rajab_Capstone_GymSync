@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const SignUp = () => {
   return (
     <div className="registerDiv">
@@ -20,15 +20,27 @@ const SignUp = () => {
                 <form>
                   <div className="inputfieldParentDiv">
                     <label>Name</label>
-                    <input className="inputfields" type="text"></input>
+                    <input
+                      className="inputfields"
+                      aria-label="Enter Your Name"
+                      type="text"
+                    ></input>
                   </div>
                   <div className="inputfieldParentDiv">
                     <label>Email Address</label>
-                    <input className="inputfields" type="text"></input>
+                    <input
+                      className="inputfields"
+                      aria-label="Enter Your Email Address"
+                      type="text"
+                    ></input>
                   </div>
                   <div className="inputfieldParentDiv">
                     <label>Password</label>
-                    <input className="inputfields" type="password"></input>
+                    <input
+                      className="inputfields"
+                      aria-label="Enter Your Password"
+                      type="password"
+                    ></input>
                   </div>
                   <div className="submitBtnDiv">
                     <button type="submit" className="submitBtn">
@@ -36,6 +48,18 @@ const SignUp = () => {
                     </button>
                   </div>
                 </form>
+              </div>
+              <div className="userAlreadyP">
+                <Link
+                  to={"/login"}
+                  style={{
+                    textDecoration: "none",
+                    color: "#838383",
+                    marginTop: "0.5vmax",
+                  }}
+                >
+                  <span className="userAlready">Already a User?</span>
+                </Link>
               </div>
               <hr className="hrReg"></hr>
               <div className="GoogleBtnDiv">
