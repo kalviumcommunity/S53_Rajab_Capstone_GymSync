@@ -6,6 +6,7 @@ import History from "../pages/History/History";
 import Notification from "../pages/Notification/Notification";
 import { ChakraProvider } from "@chakra-ui/react";
 import SignUp from "../pages/Register/SignUp";
+import Login from "../pages/Register/Login";
 const AllRoutes = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const AllRoutes = () => {
         <Route path="/history" element={<History />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );

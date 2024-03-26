@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const SignUp = () => {
   return (
     <div className="registerDiv">
@@ -48,6 +48,18 @@ const SignUp = () => {
                     </button>
                   </div>
                 </form>
+              </div>
+              <div className="userAlreadyP">
+                <Link
+                  to={"/login"}
+                  style={{
+                    textDecoration: "none",
+                    color: "#838383",
+                    marginTop: "0.5vmax",
+                  }}
+                >
+                  <span className="userAlready">Already a User?</span>
+                </Link>
               </div>
               <hr className="hrReg"></hr>
               <div className="GoogleBtnDiv">
