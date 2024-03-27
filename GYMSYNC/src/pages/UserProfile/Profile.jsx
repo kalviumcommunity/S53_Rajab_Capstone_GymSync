@@ -6,14 +6,14 @@ import MobileNavbar from "../../components/MobileNavbar";
 const Profile = () => {
   return (
     <div>
-       <Navbar />
+      <Navbar />
       <Sidebar />
       <MobileNavbar />
       <div className="firstChildTopContent">
         <div className="flex">
           <div className="profileParentGrid">
             <div
-              className="profileChildGrids userCard"
+              className="profileChildGrids silverCard"
               style={{ gridColumn: "span 2" }}
             >
               <div>

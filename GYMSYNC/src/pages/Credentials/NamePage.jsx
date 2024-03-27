@@ -2,7 +2,7 @@ import { ArrowRight } from "iconsax-react";
 import React from "react";
 import { Link } from "react-router-dom";
 const NamePage = () => {
-  function handleChange(e){
+  function handleChange(e) {
     console.log(e.target.value);
   }
   return (
