@@ -50,14 +50,14 @@ const Login = () => {
                 </div>
                 <div className="userAlreadyP">
                   <Link
-                    to={"/login"}
+                    to={"/signup"}
                     style={{
                       textDecoration: "none",
                       color: "#838383",
                       marginTop: "0.5vmax",
                     }}
                   >
-                    <span className="userAlready">Already a User?</span>
+                    <span className="userAlready">New Here? Click Here!</span>
                   </Link>
                 </div>
                 <hr className="hrReg"></hr>

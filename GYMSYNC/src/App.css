@@ -979,6 +979,21 @@ body {
     height: 100vh;
 }
 
+.navbarReg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* position: absolute; */
+}
+
+
+.navlogo {
+    width: 4vmax;
+    right: 2vmax;
+    top: 2vmax;
+    position: absolute;
+}
+
 .RegisterChildDiv {
     display: flex;
     justify-content: center;
@@ -1009,7 +1024,7 @@ body {
     background-image: url("https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: -200px;
+    background-position-x: -20vmax;
     width: 35vmax;
     height: 40vmax;
     display: flex;
@@ -1184,6 +1199,26 @@ form {
         font-weight: 100;
         font-size: 1vmax;
         text-align: left;
+    }
+
+    .navbarReg {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: absolute;
+        top: 2vmax;
+    }
+
+    .userAlready {
+        text-align: center;
+        font-size: 1vmax;
+        margin-top: 1vmax;
+        font-family: var(--fira-font);
+    }
+
+    .navlogo {
+        width: 6vmax;
+        position: static;
     }
 
     .leftRegister {
