@@ -703,7 +703,7 @@ body {
     position: absolute;
     font-size: 2vmax;
     top: 3vmax;
-    right: 2vmax;
+    right: 1vmax;
     line-height: 0px;
     background: #000000;
     background: linear-gradient(to right, #000000 55%, transparent 110%);
@@ -979,6 +979,21 @@ body {
     height: 100vh;
 }
 
+.navbarReg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* position: absolute; */
+}
+
+
+.navlogo {
+    width: 4vmax;
+    right: 2vmax;
+    top: 2vmax;
+    position: absolute;
+}
+
 .RegisterChildDiv {
     display: flex;
     justify-content: center;
@@ -1009,7 +1024,7 @@ body {
     background-image: url("https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: -200px;
+    background-position-x: -20vmax;
     width: 35vmax;
     height: 40vmax;
     display: flex;
@@ -1186,6 +1201,26 @@ form {
         text-align: left;
     }
 
+    .navbarReg {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: absolute;
+        top: 2vmax;
+    }
+
+    .userAlready {
+        text-align: center;
+        font-size: 1vmax;
+        margin-top: 1vmax;
+        font-family: var(--fira-font);
+    }
+
+    .navlogo {
+        width: 6vmax;
+        position: static;
+    }
+
     .leftRegister {
         display: none;
     }
@@ -1263,4 +1298,160 @@ form {
     }
 
 
+}
+
+.nameParent {
+    font-family: var(--fira-font);
+}
+
+.ParentCred {
+    display: flex;
+    justify-content: center;
+}
+
+.ChildCred {
+    width: 80%;
+
+}
+
+.logoCredDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.credLogo {
+    width: 4vmax;
+
+}
+
+.credTexts {
+    font-family: var(--fira-font);
+    color: white;
+    font-weight: 600;
+    line-height: 2.5vmax;
+}
+
+.YouText {
+    color: var(--primary-color);
+}
+
+.credTexts>h1 {
+    font-size: 4.5vmax;
+}
+
+.credTextInp>label {
+    color: var(--secondary-font-color);
+    font-size: 0.8vmax;
+    font-family: var(--sub-heading-font);
+
+}
+
+.credinput {
+    width: 95%;
+    background-color: transparent;
+    border: 1px solid var(--input-border-color);
+    border-radius: 0.5vmax;
+    padding: 0.8vmax 0vmax;
+    padding-left: 5%;
+    color: white;
+    font-family: var(--fira-font);
+}
+
+.credinput:focus {
+    outline: none;
+}
+
+.credFlex {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin-top: 15%;
+}
+
+.nextBtn {
+    background-color: var(--primary-color);
+    width: 3vmax;
+    height: 3vmax;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    width: 1vmax;
+}
+
+.nextBtn>div {
+    display: flex;
+    align-items: center;
+}
+
+.leftCred {
+    background-color: var(--mobile-primary-color);
+    padding-left: 1rem;
+}
+
+.UserCred {
+    background-size: cover;
+    /* Animation */
+
+}
+
+@media only screen and (max-width:600px) {
+    .RegisterChildDiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .welcomeRegText {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .userCard {
+        width: 32%;
+        z-index: 999;
+    }
+
+    .leftRegister {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .leftCred {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: absolute;
+        top: 5%;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .credTexts>h1 {
+        font-size: 5vmax;
+    }
+
+    .nextBtn {
+        width: 6vmax;
+        height: 6vmax;
+    }
+
+    .arrow {
+        width: 2vmax;
+    }
+
+    .ChildCred {
+        margin-top: 10%;
+    }
+
+}
+
+@media only screen and (max-height:500px) {
+    .userCred {
+        right: 2vmax;
+    }
 }

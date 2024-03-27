@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 const SignUp = () => {
   return (
     <div className="registerDiv">
+      <nav className="navbarReg">
+        <img
+          className="navlogo"
+          src="https://i.imgur.com/z6spKK9_d.webp?maxwidth=760&fidelity=grand"
+        ></img>
+      </nav>
       <div>
         <div className="RegisterChildDiv">
           <div className="leftRegister">
@@ -58,7 +64,9 @@ const SignUp = () => {
                     marginTop: "0.5vmax",
                   }}
                 >
-                  <span className="userAlready">Already a User?</span>
+                  <span className="userAlready">
+                    Already a User? Click Here
+                  </span>
                 </Link>
               </div>
               <hr className="hrReg"></hr>
