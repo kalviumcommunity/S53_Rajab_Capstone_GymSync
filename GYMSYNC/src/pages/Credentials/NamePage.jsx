@@ -1,8 +1,11 @@
 import { ArrowRight } from "iconsax-react";
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 const NamePage = () => {
+  const [value, setValue] = useState("JOHN DOE");
   function handleChange(e) {
+    setValue(e.target.value);
     console.log(e.target.value);
   }
   return (
@@ -27,7 +30,7 @@ const NamePage = () => {
                     ></img>
                   </div>
                   <div className="userInfo userCred">
-                    <h1>JOHN DOE</h1>
+                    <h1>{value}</h1>
                     <p>PREMIUM MEMBER</p>
                   </div>
                 </div>
@@ -55,19 +58,26 @@ const NamePage = () => {
                   </div>
                   <div className="credTextInp">
                     <label>Nickname</label>
-                    <input className="credinput" type="text"></input>
+                    <input
+                      className="credinput"
+                      onChange={handleChange}
+                      type="text"
+                      maxLength={8}
+                    ></input>
                   </div>
                 </div>
               </div>
               <div className="credFlex">
-                <div className="nextBtn">
-                  <div>
-                    <img
-                      className="arrow"
-                      src="https://i.imgur.com/RutTs7Y_d.webp?maxwidth=760&fidelity=grand"
-                    />
+                <Link to={"/"}>
+                  <div className="nextBtn">
+                    <div>
+                      <img
+                        className="arrow"
+                        src="https://i.imgur.com/RutTs7Y_d.webp?maxwidth=760&fidelity=grand"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
