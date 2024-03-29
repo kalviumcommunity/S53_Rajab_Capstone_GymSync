@@ -8,6 +8,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import SignUp from "../pages/Register/SignUp";
 import Login from "../pages/Register/Login";
 import NamePage from "../pages/Credentials/NamePage";
+import HeightPage from "../pages/Credentials/HeightPage";
+import WeightPage from "../pages/Credentials/WeightPage";
 const AllRoutes = () => {
   return (
     <div>
@@ -19,6 +21,8 @@ const AllRoutes = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/name" element={<NamePage />} />
+        <Route path="/height" element={<HeightPage />} />
+        <Route path="/weight" element={<WeightPage />} />
       </Routes>
     </div>
   );

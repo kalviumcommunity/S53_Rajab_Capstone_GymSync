@@ -634,6 +634,13 @@ body {
     background-repeat: no-repeat;
 }
 
+.silverCard {
+    background-image: url("https://i.imgur.com/lGqcqZ4.png");
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .bgprofiles {
     background-image: url("https://i.imgur.com/4hrmS1Q.png");
     background-repeat: no-repeat;
@@ -1454,4 +1461,11 @@ form {
     .userCred {
         right: 2vmax;
     }
+}
+
+.modal {
+    z-index: 999;
+    background-color: red;
+    width: max-content;
+    height: max-content;
 }
