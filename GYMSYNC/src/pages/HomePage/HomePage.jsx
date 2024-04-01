@@ -10,11 +10,70 @@ const Modal = ({ isOpen, onClose }) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <span className="close" onClick={onClose}>
-          &times;
-        </span>
-        <h2>Modal Title</h2>
-        <p>This is the content of the modal.</p>
+        <div className="closeDiv">
+          <span className="close" onClick={onClose}>
+            &times;
+          </span>
+        </div>
+        <div>
+          <img
+            className="modalImg"
+            src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg"
+          />
+        </div>
+        <div className="modalContentDiv">
+          <h1>PUSHUP</h1>
+          <p>Chest </p>
+        </div>
+        <div className="modalinputsParent">
+          <div className="modalinputsDiv">
+            <div className="reps">
+              <div className="innerreps">
+                <div className="leftinput">
+                  <h3>REPITITIONS</h3>
+                </div>
+                <div className="modalControls">
+                  <div className="minusModal">-</div>
+                  <input></input>
+                  <div className="plusModal">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="modalinputsDiv">
+            <div className="reps">
+              <div className="innerreps">
+                <div className="leftinput">
+                  <h3>SETS</h3>
+                </div>
+                <div className="modalControls">
+                  <div className="minusModal">-</div>
+                  <input></input>
+                  <div className="plusModal">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="modalinputsDiv">
+            <div className="reps">
+              <div className="innerreps">
+                <div className="leftinput">
+                  <h3>WEIGHT</h3>
+                </div>
+                <div className="modalControls">
+                  <div className="minusModal">-</div>
+                  <input></input>
+                  <div className="plusModal">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="saveBtnModal">
+          <button type="submit" className="saveBtn" onClick={onClose}>
+            SAVE
+          </button>
+        </div>
       </div>
     </div>
   );

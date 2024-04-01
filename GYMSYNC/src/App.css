@@ -1465,7 +1465,136 @@ form {
 
 .modal {
     z-index: 999;
-    background-color: red;
-    width: max-content;
-    height: max-content;
+    background-color: var(--mobile-primary-color);
+    border-radius: 10px;
+    color: white;
+    font-family: var(--sub-heading-font);
+}
+
+.modalImg {
+    object-fit: cover;
+    width: 572px;
+    height: 300px;
+}
+
+.modalContentDiv {
+    padding-left: 40px;
+    line-height: 50%;
+}
+
+.modalContentDiv>p {
+    font-family: var(--sub-heading-font);
+    font-size: 2vmin;
+    color: var(--secondary-font-color);
+}
+
+.closeDiv {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modalContentDiv>h1 {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 3vmax;
+}
+
+.closeDiv>span {
+    position: absolute;
+    background-color: var(--primary-color);
+    color: black;
+    font-size: 30px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    height: 40px;
+}
+
+.modalinputsParent {
+    padding-top: 10px;
+}
+
+.modalinputsDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.reps {
+    font-family: var(--sub-heading-font);
+    width: 90%;
+    height: 60px;
+    background-color: #252525;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.innerreps {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.leftinput>h3 {
+    font-weight: 300;
+    font-size: 1vmax;
+}
+
+.modalControls {
+    display: flex;
+    height: 40px;
+    width: 150px;
+    justify-content: space-evenly;
+}
+
+.modalControls>input {
+    background-color: #2D2D2D;
+    width: 20%;
+    border: none;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.plusModal {
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    font-size: 26px;
+}
+
+.minusModal {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #5C5C5C;
+    color: var(--background-color);
+    padding: 10px;
+    color: white;
+    font-size: 26px;
+
+}
+
+.saveBtnModal {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.saveBtn {
+    background-color: var(--primary-color);
+    border: none;
+    font-family: var(--sub-heading-font);
+    padding: 5px 40px;
+    border-radius: 20px;
 }

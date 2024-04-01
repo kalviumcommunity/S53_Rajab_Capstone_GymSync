@@ -62,6 +62,7 @@ const NamePage = () => {
                       className="credinput"
                       onChange={handleChange}
                       type="text"
+                      placeholder="John Doe"
                       maxLength={8}
                     ></input>
                   </div>
