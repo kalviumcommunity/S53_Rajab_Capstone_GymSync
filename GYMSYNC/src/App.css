@@ -1498,6 +1498,9 @@ form {
     border-radius: 10px;
     color: white;
     font-family: var(--sub-heading-font);
+    -webkit-box-shadow: 17px 78px 300px 200px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 17px 78px 300px 200px rgba(0, 0, 0, 1);
+    box-shadow: 117px 178px 1300px 1200px rgba(0, 0, 0, 0.807);
 }
 
 .modalImg {
