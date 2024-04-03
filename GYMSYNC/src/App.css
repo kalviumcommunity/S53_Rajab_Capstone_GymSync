@@ -1627,6 +1627,7 @@ form {
 .saveBtn {
     background-color: var(--primary-color);
     border: none;
+    color: black;
     font-family: var(--sub-heading-font);
     padding: 0.5vmax 3vmax;
     border-radius: 20px;
