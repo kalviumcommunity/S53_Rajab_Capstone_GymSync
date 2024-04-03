@@ -1,7 +1,7 @@
 import { SearchNormal1 } from "iconsax-react";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import MobileNavbar from "../../components/MobileNavbar";
 const Modal = ({ isOpen, onClose }) => {
@@ -81,6 +81,20 @@ const Modal = ({ isOpen, onClose }) => {
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (isModalOpen) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+
+    return () => {
+      body.style.overflow = "auto"; // Reset overflow when component unmounts
+    };
+  }, [isModalOpen]);
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -88,7 +102,6 @@ const HomePage = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
   return (
     <>
       <Navbar />

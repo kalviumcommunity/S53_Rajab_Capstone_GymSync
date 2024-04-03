@@ -245,7 +245,7 @@ body {
 
 }
 
-@media only screen and (max-width: 1030px) {
+@media only screen and (min-height: 1360px) {
     .Gridcards {
         position: absolute;
         display: grid;
@@ -258,7 +258,9 @@ body {
     }
 }
 
-@media only screen and (max-width: 940px) {
+
+
+@media only screen and (max-width: 910px) {
     .Gridcards {
         position: absolute;
         display: grid;
@@ -1693,6 +1695,16 @@ form {
         color: white;
         font-size: 3vmax;
 
+    }
+
+}
+
+@media only screen and (max-height:500px) {
+    .modalImg {
+        object-fit: cover;
+        width: 40vmax;
+        height: 10vmax;
+        border-radius: 10px;
     }
 
 }
