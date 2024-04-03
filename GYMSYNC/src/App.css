@@ -1174,6 +1174,7 @@ form {
     height: 2.5vmax;
     border-radius: 5px;
     border: none;
+    color: var(--background-color);
 }
 
 .GoogleBtnDiv {
@@ -1203,6 +1204,7 @@ form {
     height: 2.5vmax;
     font-size: 1vmax;
     background-color: white;
+    color: var(--background-color);
 }
 
 .googleImg {
@@ -1450,10 +1452,7 @@ form {
         z-index: 999;
     }
 
-    .leftRegister {
-        display: flex;
-        justify-content: center;
-    }
+
 
 
     .leftCred {
