@@ -1639,3 +1639,61 @@ form {
         top: 10px;
     }
 }
+
+@media only screen and (max-width:600px) {
+
+
+    .reps {
+        font-family: var(--sub-heading-font);
+        width: 90%;
+        height: 8vmax;
+        background-color: #252525;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .leftinput>h3 {
+        font-weight: 300;
+        font-size: 1.7vmax;
+    }
+
+    .modalControls {
+        display: flex;
+        height: 3.5vmax;
+        width: 12vmax;
+        justify-content: space-evenly;
+    }
+
+    .modalControls>input {
+        background-color: #2D2D2D;
+        width: 20%;
+        border: none;
+        color: white;
+        text-align: center;
+        border-radius: 0.5vmax;
+    }
+
+    .plusModal {
+        border-radius: 0.5vmax;
+        background-color: var(--primary-color);
+        color: var(--background-color);
+        padding: 0.9vmax;
+        align-items: center;
+        display: flex;
+        font-size: 3vmax;
+    }
+
+    .minusModal {
+        border-radius: 0.5vmax;
+        display: flex;
+        align-items: center;
+        background-color: #5C5C5C;
+        color: var(--background-color);
+        padding: 0.8vmax;
+        color: white;
+        font-size: 3vmax;
+
+    }
+
+}
