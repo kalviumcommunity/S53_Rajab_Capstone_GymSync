@@ -12,13 +12,17 @@
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/roboto": "^5.0.12",
+    "@mui/material": "^5.15.14",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "framer-motion": "^11.0.13",
     "iconsax-react": "^0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ionicons": "^1.5.7",
     "react-router-dom": "^6.22.3",
+    "styled-components": "^6.1.8",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
