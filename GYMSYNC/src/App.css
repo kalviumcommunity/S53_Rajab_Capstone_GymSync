@@ -241,6 +241,34 @@ body {
         color: white;
         font-size: 1.45rem;
     }
+
+
+}
+
+@media only screen and (max-width: 1030px) {
+    .Gridcards {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-row-gap: 30px;
+        top: 20vmax;
+        place-content: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .Gridcards {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-row-gap: 30px;
+        top: 20vmax;
+        place-content: center;
+        width: 80%;
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -1464,6 +1492,7 @@ form {
 }
 
 .modal {
+    position: fixed;
     z-index: 999;
     background-color: var(--mobile-primary-color);
     border-radius: 10px;
@@ -1473,18 +1502,19 @@ form {
 
 .modalImg {
     object-fit: cover;
-    width: 572px;
-    height: 300px;
+    width: 40vmax;
+    height: 20vmax;
+    border-radius: 10px;
 }
 
 .modalContentDiv {
-    padding-left: 40px;
+    padding-left: 3vmax;
     line-height: 50%;
 }
 
 .modalContentDiv>p {
     font-family: var(--sub-heading-font);
-    font-size: 2vmin;
+    font-size: 1vmax;
     color: var(--secondary-font-color);
 }
 
@@ -1526,7 +1556,7 @@ form {
 .reps {
     font-family: var(--sub-heading-font);
     width: 90%;
-    height: 60px;
+    height: 4vmax;
     background-color: #252525;
     border-radius: 10px;
     display: flex;
@@ -1548,8 +1578,8 @@ form {
 
 .modalControls {
     display: flex;
-    height: 40px;
-    width: 150px;
+    height: 2.5vmax;
+    width: 10vmax;
     justify-content: space-evenly;
 }
 
@@ -1559,28 +1589,28 @@ form {
     border: none;
     color: white;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 0.5vmax;
 }
 
 .plusModal {
-    border-radius: 10px;
+    border-radius: 0.5vmax;
     background-color: var(--primary-color);
     color: var(--background-color);
-    padding: 10px;
+    padding: 0.5vmax;
     align-items: center;
     display: flex;
-    font-size: 26px;
+    font-size: 2vmax;
 }
 
 .minusModal {
-    border-radius: 10px;
+    border-radius: 0.5vmax;
     display: flex;
     align-items: center;
     background-color: #5C5C5C;
     color: var(--background-color);
-    padding: 10px;
+    padding: 0.8vmax;
     color: white;
-    font-size: 26px;
+    font-size: 2vmax;
 
 }
 
@@ -1595,6 +1625,13 @@ form {
     background-color: var(--primary-color);
     border: none;
     font-family: var(--sub-heading-font);
-    padding: 5px 40px;
+    padding: 0.5vmax 3vmax;
     border-radius: 20px;
+}
+
+@media only screen and (min-width:600px) {
+    .modal {
+        position: fixed;
+        top: 10px;
+    }
 }
