@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const userSchema = mongoose.Schema(
   {
-    name: {
+    nickname: {
       type: String,
       required: true,
     },
@@ -24,16 +24,24 @@ const userSchema = mongoose.Schema(
       type: String,
       default: "",
     },
-    followers: {
-      type: [String],
-      default: [],
-    },
-    following: {
-      type: [String],
-      default: [],
-    },
-    bio: {
+    followingGymTrainer: {
       type: String,
+      default: "",
+    },
+    height: {
+      type: Number,
+      default: "",
+    },
+    weight: {
+      type: Number,
+      default: "",
+    },
+    age: {
+      type: Number,
+      default: "",
+    },
+    BMI: {
+      type: Number,
       default: "",
     },
   },
