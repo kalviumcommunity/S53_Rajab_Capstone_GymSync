@@ -41,11 +41,13 @@ const Login = () => {
                         type="password"
                       ></input>
                     </div>
+                      <Link to={"/name"}>
                     <div className="submitBtnDiv">
-                      <button type="submit" className="submitBtn">
-                        SUBMIT
-                      </button>
+                        <button type="submit" className="submitBtn">
+                          SUBMIT
+                        </button>
                     </div>
+                      </Link>
                   </form>
                 </div>
                 <div className="userAlreadyP">

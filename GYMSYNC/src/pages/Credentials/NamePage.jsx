@@ -30,7 +30,7 @@ const NamePage = () => {
                     ></img>
                   </div>
                   <div className="userInfo userCred">
-                    <h1>{value}</h1>
+                    <h1 style={{ textTransform: "uppercase" }}>{value}</h1>
                     <p>PREMIUM MEMBER</p>
                   </div>
                 </div>
@@ -59,6 +59,7 @@ const NamePage = () => {
                   <div className="credTextInp">
                     <label>Nickname</label>
                     <input
+                      style={{ textTransform: "uppercase" }}
                       className="credinput"
                       onChange={handleChange}
                       type="text"
