@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage/HomePage";
 import Profile from "../pages/UserProfile/Profile";
 import History from "../pages/History/History";
@@ -10,19 +10,47 @@ import Login from "../pages/Register/Login";
 import NamePage from "../pages/Credentials/NamePage";
 import HeightPage from "../pages/Credentials/HeightPage";
 import WeightPage from "../pages/Credentials/WeightPage";
+import userAtom from "../atoms/userAtoms";
+import AuthPage from "../pages/Register/AuthPage";
+import { useRecoilValue } from "recoil";
 const AllRoutes = () => {
+  const user = useRecoilValue(userAtom);
+
   return (
     <div>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/notification" element={<Notification />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/name" element={<NamePage />} />
-        <Route path="/height" element={<HeightPage />} />
-        <Route path="/weight" element={<WeightPage />} />
+        <Route
+          path="/auth"
+          element={!user ? <AuthPage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/"
+          element={user ? <HomePage /> : <Navigate to="/auth" />}
+        />{" "}
+        <Route
+          path="/profile"
+          element={user ? <Profile /> : <Navigate to="/auth" />}
+        />
+        <Route
+          path="/history"
+          element={user ? <History /> : <Navigate to="/auth" />}
+        />
+        <Route
+          path="/notification"
+          element={user ? <Notification /> : <Navigate to="/auth" />}
+        />
+        <Route
+          path="/name"
+          element={user ? <NamePage /> : <Navigate to="/auth" />}
+        />
+        <Route
+          path="/height"
+          element={user ? <HeightPage /> : <Navigate to="/auth" />}
+        />
+        <Route
+          path="/weight"
+          element={user ? <WeightPage /> : <Navigate to="/auth" />}
+        />
       </Routes>
     </div>
   );
