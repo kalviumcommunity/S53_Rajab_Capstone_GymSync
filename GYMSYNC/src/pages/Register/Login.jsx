@@ -26,6 +26,7 @@ const Login = () => {
         alert(data.error);
         return;
       }
+
       localStorage.setItem("user-gymSync", JSON.stringify(data));
       setUser(data);
     } catch (error) {
@@ -98,7 +99,7 @@ const Login = () => {
                 </div>
                 <div className="userAlreadyP">
                   <Link
-                    onClick={() => setAuthScreenState("signup") }
+                    onClick={() => setAuthScreenState("signup")}
                     style={{
                       textDecoration: "none",
                       color: "#838383",

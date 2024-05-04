@@ -72,16 +72,16 @@ const loginUser = async (req, res) => {
       password,
       user?.password || ""
     );
-    if (!user || isPasswordCorrect)
+    if (!user || !isPasswordCorrect)
       return res.status(400).json({ error: "Invalid Username or Password" });
     generateTokenandSetCookie(user._id, res);
     res.status(200).json({
       _id: user._id,
-      username: newUser.username,
-      nickname: newUser.nickname,
-      height: newUser.height,
-      weight: newUser.weight,
-      BMI: newUser.BMI,
+      username: user.username,
+      nickname: user.nickname,
+      height: user.height,
+      weight: user.weight,
+      BMI: user.BMI,
     });
   } catch (error) {
     res.status(500).json({ error: error.message });

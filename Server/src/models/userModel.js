@@ -3,7 +3,6 @@ const userSchema = mongoose.Schema(
   {
     nickname: {
       type: String,
-      required: true,
     },
     username: {
       type: String,
@@ -29,14 +28,10 @@ const userSchema = mongoose.Schema(
       default: "",
     },
     height: {
-      required: true,
-
       type: Number,
       default: "",
     },
     weight: {
-      required: true,
-
       type: Number,
       default: "",
     },
