@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import authScreenAtom from "../../atoms/authAtoms";
+import userAtom from "../../atoms/userAtoms";
 const Login = () => {
+  const setAuthScreenState = useSetRecoilState(authScreenAtom);
+  const setUser = useSetRecoilState(userAtom);
+
+  const [inputs, setInputs] = useState({
+    username: "",
+    password: "",
+  });
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputs),
+      });
+      const data = await res.json();
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+      localStorage.setItem("user-gymSync", JSON.stringify(data));
+      setUser(data);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
     <div>
       <div className="registerDiv">
@@ -26,11 +58,17 @@ const Login = () => {
                 <div className="formParent">
                   <form>
                     <div className="inputfieldParentDiv">
-                      <label>Email Address</label>
+                      <label>Username</label>
                       <input
                         className="inputfields"
                         aria-label="Enter Your Email Address"
                         type="text"
+                        onChange={(e) =>
+                          setInputs((inputs) => ({
+                            ...inputs,
+                            username: e.target.value,
+                          }))
+                        }
                       ></input>
                     </div>
                     <div className="inputfieldParentDiv">
@@ -39,20 +77,28 @@ const Login = () => {
                         className="inputfields"
                         aria-label="Enter Your Password"
                         type="password"
+                        onChange={(e) =>
+                          setInputs((inputs) => ({
+                            ...inputs,
+                            password: e.target.value,
+                          }))
+                        }
                       ></input>
                     </div>
-                      <Link to={"/name"}>
                     <div className="submitBtnDiv">
-                        <button type="submit" className="submitBtn">
-                          SUBMIT
-                        </button>
+                      <button
+                        type="submit"
+                        className="submitBtn"
+                        onClick={handleLogin}
+                      >
+                        SUBMIT
+                      </button>
                     </div>
-                      </Link>
                   </form>
                 </div>
                 <div className="userAlreadyP">
                   <Link
-                    to={"/signup"}
+                    onClick={() => setAuthScreenState("signup") }
                     style={{
                       textDecoration: "none",
                       color: "#838383",

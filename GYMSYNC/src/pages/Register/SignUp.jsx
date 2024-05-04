@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import authScreenAtom from "../../atoms/authAtoms";
+import userAtom from "../../atoms/userAtoms";
 const SignUp = () => {
+  const setAuthScreenState = useSetRecoilState(authScreenAtom);
+  const setUser = useSetRecoilState(userAtom);
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const handleSignup = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("/api/users/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputs),
+      });
+      const data = await res.json();
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+      localStorage.setItem("user-gymSync", JSON.stringify(data));
+      setUser(data);
+    } catch (error) {
+      alert(error);
+    }
+  };
   return (
     <div className="registerDiv">
       <nav className="navbarReg">
@@ -25,11 +57,17 @@ const SignUp = () => {
               <div className="formParent">
                 <form>
                   <div className="inputfieldParentDiv">
-                    <label>Name</label>
+                    <label>Username</label>
                     <input
                       className="inputfields"
                       aria-label="Enter Your Name"
                       type="text"
+                      onChange={(e) =>
+                        setInputs((inputs) => ({
+                          ...inputs,
+                          username: e.target.value,
+                        }))
+                      }
                     ></input>
                   </div>
                   <div className="inputfieldParentDiv">
@@ -38,6 +76,12 @@ const SignUp = () => {
                       className="inputfields"
                       aria-label="Enter Your Email Address"
                       type="text"
+                      onChange={(e) =>
+                        setInputs((inputs) => ({
+                          ...inputs,
+                          email: e.target.value,
+                        }))
+                      }
                     ></input>
                   </div>
                   <div className="inputfieldParentDiv">
@@ -46,10 +90,20 @@ const SignUp = () => {
                       className="inputfields"
                       aria-label="Enter Your Password"
                       type="password"
+                      onChange={(e) =>
+                        setInputs((inputs) => ({
+                          ...inputs,
+                          password: e.target.value,
+                        }))
+                      }
                     ></input>
                   </div>
                   <div className="submitBtnDiv">
-                    <button type="submit" className="submitBtn">
+                    <button
+                      type="submit"
+                      className="submitBtn"
+                      onClick={handleSignup}
+                    >
                       SUBMIT
                     </button>
                   </div>
@@ -57,7 +111,8 @@ const SignUp = () => {
               </div>
               <div className="userAlreadyP">
                 <Link
-                  to={"/login"}
+                  to="/name"
+                  onClick={() => setAuthScreenState("login")}
                   style={{
                     textDecoration: "none",
                     color: "#838383",
