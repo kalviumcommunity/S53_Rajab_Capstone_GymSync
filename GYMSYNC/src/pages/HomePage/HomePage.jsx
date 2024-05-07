@@ -80,8 +80,25 @@ const Modal = ({ isOpen, onClose }) => {
 };
 
 const HomePage = () => {
+  const [post, setPosts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    const getFeedPost = async () => {
+      try {
+        const res = await fetch("/api/posts/feed");
+        const data = await res.json();
+        if (data.error) {
+          alert(data.error);
+          return;
+        }
+        setPosts(data);
+      } catch (error) {
+        alert(error.message);
+      }
+    };
+    getFeedPost();
+  }, []);
   useEffect(() => {
     const body = document.querySelector("body");
     if (isModalOpen) {
@@ -137,56 +154,19 @@ const HomePage = () => {
 
           <div className="parentCard">
             <div className="Gridcards">
-              <div className="individualCards" onClick={openModal}>
-                <img
-                  className="Image"
-                  src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg"
-                />
-                <div className="workoutTexts">
-                  <h1>PUSHUP</h1>
-                  <p>Chest</p>
+              {post.map((post) => (
+                <div
+                  className="individualCards"
+                  key={post._id}
+                  onClick={openModal}
+                >
+                  <img className="Image" src={post.image} />
+                  <div className="workoutTexts">
+                    <h1>{post.workoutName}</h1>
+                    <p>Chest</p>
+                  </div>
                 </div>
-              </div>
-              <div className="individualCards">
-                <img
-                  className="Image"
-                  src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg"
-                />
-                <div className="workoutTexts">
-                  <h1>PUSHUP</h1>
-                  <p>Chest</p>
-                </div>
-              </div>
-              <div className="individualCards">
-                <img
-                  className="Image"
-                  src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg"
-                />
-                <div className="workoutTexts">
-                  <h1>PUSHUP</h1>
-                  <p>Chest</p>
-                </div>
-              </div>
-              <div className="individualCards">
-                <img
-                  className="Image"
-                  src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg"
-                />
-                <div className="workoutTexts">
-                  <h1>PUSHUP</h1>
-                  <p>Chest</p>
-                </div>
-              </div>
-              <div className="individualCards">
-                <img
-                  className="Image"
-                  src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg"
-                />
-                <div className="workoutTexts">
-                  <h1>PUSHUP</h1>
-                  <p>Chest</p>
-                </div>
-              </div>
+              ))}
             </div>
             <Modal isOpen={isModalOpen} onClose={closeModal} />
           </div>

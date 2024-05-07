@@ -13,7 +13,7 @@
   },
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "/Server/src/index.js",
   "engines": {
     "node": "18.x"
   },
