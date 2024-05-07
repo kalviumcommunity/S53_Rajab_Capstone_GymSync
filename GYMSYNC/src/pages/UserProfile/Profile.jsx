@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SearchNormal1 } from "iconsax-react";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import MobileNavbar from "../../components/MobileNavbar";
+import { useParams } from "react-router-dom";
 const Profile = () => {
+  const { id } = useParams();
+  const [user, setUser] = useState([]);
+  const [fetchingPost, setFetchingPost] = useState(true);
+  useEffect(() => {
+    const getPosts = async () => {
+      setFetchingPost(true);
+      try {
+        const res = await fetch(`/api/users/profile/${id}`);
+        const data = await res.json();
+        console.log("data: ", data);
+        setUser(data);
+      } catch (error) {
+        alert(error.message);
+        setUser([]);
+      }
+    };
+    getPosts();
+  }, []);
   return (
     <div>
       <Navbar />
@@ -27,7 +46,7 @@ const Profile = () => {
                 ></img>
               </div>
               <div className="userInfo">
-                <h1>JOHN DOE</h1>
+                <h1>{user.username}</h1>
                 <p>PREMIUM MEMBER</p>
               </div>
             </div>

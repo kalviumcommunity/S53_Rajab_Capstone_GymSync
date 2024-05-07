@@ -28,7 +28,7 @@ const AllRoutes = () => {
           element={user ? <HomePage /> : <Navigate to="/auth" />}
         />{" "}
         <Route
-          path="/profile"
+          path="/profile/:id"
           element={user ? <Profile /> : <Navigate to="/auth" />}
         />
         <Route

@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Home2 } from "iconsax-react";
 import { User } from "iconsax-react";
 import { Notification } from "iconsax-react";
 import { CalendarSearch } from "iconsax-react";
 import { Category } from "iconsax-react";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 
 const MobileNavbar = () => {
+  let user = localStorage.getItem("user-gymSync");
+  let parsedUser = JSON.parse(user);
+  console.log("parsedUser: ", parsedUser);
+  console.log("user: ", user);
+
   return (
     <div>
       <div className="mobileBarParent">
@@ -26,7 +31,10 @@ const MobileNavbar = () => {
               </div>
             </div>
           </Link>
-          <Link style={{ textDecoration: "none" }} to="/profile">
+          <Link
+            style={{ textDecoration: "none" }}
+            to={`/profile/${parsedUser._id}`}
+          >
             <div className="mobileBarIcons">
               {/* USER ICON */}
               <div className="iconDiv">
