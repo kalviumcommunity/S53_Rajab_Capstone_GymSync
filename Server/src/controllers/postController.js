@@ -22,6 +22,7 @@ const createPost = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
 const getFeedPosts = async (req, res) => {
   try {
     const posts = await Post.find({});

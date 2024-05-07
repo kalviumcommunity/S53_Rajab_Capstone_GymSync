@@ -3,17 +3,17 @@ import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import generateTokenandSetCookie from "../utils/generateTokenandSetCookie.js";
 const getUserProfile = async (req, res) => {
-  const { query } = req.params;
+  const { id } = req.params;
   try {
     let user;
     //query is userid
-    if (mongoose.Types.ObjectId.isValid(query)) {
-      user = await User.findOne({ _id: query })
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      user = await User.findOne({ "_id": id })
         .select("-password")
         .select("-updatedAt");
-    } // query is username
+    } // id is username
     else {
-      user = await User.findOne({ username: query })
+      user = await User.findOne({ "username": id })
         .select("-password")
         .select("-updatedAt");
     }
