@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import "./Components.css";
 const Sidebar = () => {
   const [currentPage, setCurrentPage] = useState("home");
+  let user = localStorage.getItem("user-gymSync");
+  let parsedUser = JSON.parse(user);
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -24,7 +26,10 @@ const Sidebar = () => {
             />
           </div>
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/profile">
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`/profile/${parsedUser._id}`}
+        >
           <div className="SideBarIcons">
             {/* USER ICON */}
             <User

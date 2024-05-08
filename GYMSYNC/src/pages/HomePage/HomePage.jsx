@@ -4,25 +4,120 @@ import Sidebar from "../../components/Sidebar";
 import React, { useState, useEffect } from "react";
 
 import MobileNavbar from "../../components/MobileNavbar";
-const Modal = ({ isOpen, onClose }) => {
+const Modal = ({ isOpen, onClose, postDetails }) => {
+  const [repsCount, setRepsCount] = useState(0);
+  const [setsCount, setSetsCount] = useState(0);
+  const [weightCount, setWeightCount] = useState(0);
+
+  const incrementReps = () => {
+    setRepsCount((prevCount) => prevCount + 1);
+  };
+
+  const decrementReps = () => {
+    if (repsCount > 0) {
+      setRepsCount((prevCount) => prevCount - 1);
+    }
+  };
+
+  const incrementSets = () => {
+    setSetsCount((prevCount) => prevCount + 1);
+  };
+
+  const decrementSets = () => {
+    if (setsCount > 0) {
+      setSetsCount((prevCount) => prevCount - 1);
+    }
+  };
+
+  const incrementWeight = () => {
+    setWeightCount((prevCount) => prevCount + 1);
+  };
+
+  const decrementWeight = () => {
+    if (weightCount > 0) {
+      setWeightCount((prevCount) => prevCount - 1);
+    }
+  };
+
+  const handleRepsChange = (event) => {
+    const value = parseInt(event.target.value);
+    if (!isNaN(value)) {
+      setRepsCount(value);
+    }
+  };
+
+  const handleSetsChange = (event) => {
+    const value = parseInt(event.target.value);
+    if (!isNaN(value)) {
+      setSetsCount(value);
+    }
+  };
+
+  const handleWeightChange = (event) => {
+    const value = parseInt(event.target.value);
+    if (!isNaN(value)) {
+      setWeightCount(value);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const userDataString = localStorage.getItem("user-gymSync");
+    const userData = JSON.parse(userDataString);
+    const userId = userData._id;
+
+    const formData = {
+      userId: userId,
+      workoutId: postDetails._id,
+      sets: setsCount,
+      weight: weightCount,
+      reps: repsCount,
+    };
+    console.log("formData: ", formData);
+    try {
+      if (repsCount === 0 && setsCount === 0 && weightCount === 0) {
+        alert("Please enter at least one value for Reps, Sets, or Weight");
+        return;
+      }
+      const res = await fetch("/api/history/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      console.log("data: ", data);
+      if (data.error) {
+        console.error(data.error);
+        alert("Error submitting workout data");
+        return;
+      }
+      console.log("Workout data submitted successfully:", data);
+      setRepsCount(0);
+      setSetsCount(0);
+      setWeightCount(0);
+      onClose();
+    } catch (error) {
+      console.error(error);
+      alert("Error submitting workout data");
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
     <div className="modal">
-      <div className="modal-content">
+      <form className="modal-content" onSubmit={handleSubmit}>
         <div className="closeDiv">
           <span className="close" onClick={onClose}>
             &times;
           </span>
         </div>
         <div>
-          <img
-            className="modalImg"
-            src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?cs=srgb&dl=pexels-victor-freitas-841130.jpg&fm=jpg"
-          />
+          <img className="modalImg" src={postDetails.image} />
         </div>
         <div className="modalContentDiv">
-          <h1>PUSHUP</h1>
+          <h1>{postDetails.workoutName}</h1>
           <p>Chest </p>
         </div>
         <div className="modalinputsParent">
@@ -33,9 +128,17 @@ const Modal = ({ isOpen, onClose }) => {
                   <h3>REPITITIONS</h3>
                 </div>
                 <div className="modalControls">
-                  <div className="minusModal">-</div>
-                  <input></input>
-                  <div className="plusModal">+</div>
+                  <div className="minusModal" onClick={decrementReps}>
+                    -
+                  </div>
+                  <input
+                    name="reps"
+                    value={repsCount}
+                    onChange={handleRepsChange}
+                  ></input>
+                  <div className="plusModal" onClick={incrementReps}>
+                    +
+                  </div>
                 </div>
               </div>
             </div>
@@ -47,9 +150,17 @@ const Modal = ({ isOpen, onClose }) => {
                   <h3>SETS</h3>
                 </div>
                 <div className="modalControls">
-                  <div className="minusModal">-</div>
-                  <input></input>
-                  <div className="plusModal">+</div>
+                  <div className="minusModal" onClick={decrementSets}>
+                    -
+                  </div>
+                  <input
+                    name="sets"
+                    value={setsCount}
+                    onChange={handleSetsChange}
+                  ></input>
+                  <div className="plusModal" onClick={incrementSets}>
+                    +
+                  </div>
                 </div>
               </div>
             </div>
@@ -61,25 +172,34 @@ const Modal = ({ isOpen, onClose }) => {
                   <h3>WEIGHT</h3>
                 </div>
                 <div className="modalControls">
-                  <div className="minusModal">-</div>
-                  <input></input>
-                  <div className="plusModal">+</div>
+                  <div className="minusModal" onClick={decrementWeight}>
+                    -
+                  </div>
+                  <input
+                    name="weight"
+                    value={weightCount}
+                    onChange={handleWeightChange}
+                  ></input>
+                  <div className="plusModal" onClick={incrementWeight}>
+                    +
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="saveBtnModal">
-          <button type="submit" className="saveBtn" onClick={onClose}>
+          <button type="submit" className="saveBtn">
             SAVE
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
 
 const HomePage = () => {
+  const [selectedPost, setSelectedPost] = useState(null);
   const [post, setPosts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -154,21 +274,33 @@ const HomePage = () => {
 
           <div className="parentCard">
             <div className="Gridcards">
-              {post.map((post) => (
-                <div
-                  className="individualCards"
-                  key={post._id}
-                  onClick={openModal}
-                >
-                  <img className="Image" src={post.image} />
-                  <div className="workoutTexts">
-                    <h1>{post.workoutName}</h1>
-                    <p>Chest</p>
-                  </div>
-                </div>
-              ))}
+              {post &&
+                post.map((post) => (
+                  <>
+                    <div
+                      className="individualCards"
+                      key={post._id}
+                      onClick={() => {
+                        setSelectedPost(post);
+                        openModal();
+                      }}
+                    >
+                      <img className="Image" src={post.image} />
+                      <div className="workoutTexts">
+                        <h1>{post.workoutName}</h1>
+                        <p>Chest</p>
+                      </div>
+                    </div>
+                    <>
+                      <Modal
+                        postDetails={selectedPost}
+                        isOpen={isModalOpen}
+                        onClose={closeModal}
+                      />
+                    </>
+                  </>
+                ))}
             </div>
-            <Modal isOpen={isModalOpen} onClose={closeModal} />
           </div>
         </div>
       </div>

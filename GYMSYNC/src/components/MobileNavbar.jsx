@@ -9,8 +9,6 @@ import { Link, json } from "react-router-dom";
 const MobileNavbar = () => {
   let user = localStorage.getItem("user-gymSync");
   let parsedUser = JSON.parse(user);
-  console.log("parsedUser: ", parsedUser);
-  console.log("user: ", user);
 
   return (
     <div>

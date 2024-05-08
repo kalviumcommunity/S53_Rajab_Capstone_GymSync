@@ -12,6 +12,7 @@ import {
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import MobileNavbar from "../../components/MobileNavbar";
+import { useEffect } from "react";
 const History = () => {
   return (
     <>
