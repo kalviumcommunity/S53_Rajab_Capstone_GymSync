@@ -1494,14 +1494,20 @@ form {
 
 .modal {
     position: fixed;
+    top: 20%;
+    right: 30%;
     z-index: 999;
     background-color: var(--mobile-primary-color);
     border-radius: 10px;
     color: white;
     font-family: var(--sub-heading-font);
-    -webkit-box-shadow: 17px 78px 300px 200px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 17px 78px 300px 200px rgba(0, 0, 0, 1);
-    box-shadow: 117px 178px 1300px 1200px rgba(0, 0, 0, 0.807);
+    -webkit-box-shadow: 17px 78px 300px 200px rgba(0, 0, 0, 0.533);
+    -moz-box-shadow: 17px 78px 300px 200px rgba(0, 0, 0, 0.323);
+    box-shadow: 117px 178px 1300px 1200px rgba(0, 0, 0, 0.429);
+}
+
+.modal-content {
+    width: max-content;
 }
 
 .modalImg {
@@ -1639,10 +1645,16 @@ form {
         position: fixed;
         top: 10px;
     }
+
 }
 
 @media only screen and (max-width:600px) {
 
+    .modal {
+        position: fixed;
+        top: 10%;
+        right: 11%;
+    }
 
     .reps {
         font-family: var(--sub-heading-font);
@@ -1708,4 +1720,3 @@ form {
     }
 
 }
-
