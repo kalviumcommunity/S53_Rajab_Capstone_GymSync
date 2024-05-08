@@ -527,11 +527,37 @@ body {
 .accordionTextParent>div {
     margin-top: 2%;
     width: 90%;
+    display: flex;
+}
+
+.topDivHist {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.noDataMessage {
+    display: flex;
+    justify-content: center;
+}
+
+.rightHead {
+    display: flex;
+    /* width: 180px; */
+    width: 11vmax;
+    justify-content: space-between;
+}
+
+.leftHead {
+    width: 11vmax;
+    display: flex;
+    justify-content: space-between;
 }
 
 .accordionTextParent {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .accordionTextChild {
