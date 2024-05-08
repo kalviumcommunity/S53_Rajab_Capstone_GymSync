@@ -7,6 +7,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
+        // target: "",
         target: "https://gymsync-server.vercel.app",
         changeOrigin: true,
         secure: false,
