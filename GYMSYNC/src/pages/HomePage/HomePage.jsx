@@ -69,7 +69,7 @@ const Modal = ({ isOpen, onClose, postDetails }) => {
 
     const formData = {
       userId: userId,
-      workoutId: postDetails._id,
+      workoutName: postDetails.workoutName,
       sets: setsCount,
       weight: weightCount,
       reps: repsCount,
@@ -96,6 +96,7 @@ const Modal = ({ isOpen, onClose, postDetails }) => {
       setRepsCount(0);
       setSetsCount(0);
       setWeightCount(0);
+      alert("Successfully Saved to History");
       onClose();
     } catch (error) {
       console.error(error);
