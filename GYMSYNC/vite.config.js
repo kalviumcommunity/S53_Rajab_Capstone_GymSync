@@ -1,18 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],  server: {
+  plugins: [react()],
+  server: {
     port: 3000,
     proxy: {
       "/api": {
-        // target: "",
-        target: "https://gymsync-server.vercel.app",
+        target: "http://gymsync-server.vercel.app",
         changeOrigin: true,
         secure: false,
       },
     },
   },
 });
-
