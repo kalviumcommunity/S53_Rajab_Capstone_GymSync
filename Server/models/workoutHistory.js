@@ -5,8 +5,8 @@ const workoutHistorySchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  workoutId: {
-    type: mongoose.Schema.Types.ObjectId,
+  workoutName: {
+    type: String,
     ref: "Workout",
     required: true,
   },

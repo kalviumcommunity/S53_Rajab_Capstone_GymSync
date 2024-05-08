@@ -2,10 +2,10 @@ import History from "../models/workoutHistory.js";
 
 const saveWorkout = async (req, res) => {
   try {
-    const { userId, workoutId, sets, weight, reps } = req.body;
+    const { userId, workoutName, sets, weight, reps } = req.body;
     const newHistory = new History({
       userId,
-      workoutId,
+      workoutName,
       sets,
       weight,
       reps,

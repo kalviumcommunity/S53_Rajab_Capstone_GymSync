@@ -13,6 +13,10 @@ app.use(express.json()); //to parse JSON data in the req.body
 app.use(express.urlencoded({ extended: true })); // to parse form data in the req.body
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.send("This is Backend Server!");
+});
+
 //Routes
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
