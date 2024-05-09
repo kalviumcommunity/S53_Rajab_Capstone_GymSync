@@ -16,7 +16,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("/api/users/login", inputs)
+      .post("https://gymsync-server.vercel.app/api/users/login", inputs)
       .then((response) => {
         const data = response.data;
         if (data.error) {
@@ -28,10 +28,9 @@ const Login = () => {
         setUser(data);
       })
       .catch((error) => {
-        console.log(error);;
+        console.log(error);
       });
   };
-
 
   return (
     <div>

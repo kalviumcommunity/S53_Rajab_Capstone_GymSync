@@ -23,7 +23,9 @@ const History = () => {
   useEffect(() => {
     const getHistory = async () => {
       try {
-        const res = await fetch(`/api/history/historydata/${userId}`);
+        const res = await fetch(
+          `https://gymsync-server.vercel.app/api/history/historydata/${userId}`
+        );
         const data = await res.json();
         if (data.error) {
           alert(data.error);

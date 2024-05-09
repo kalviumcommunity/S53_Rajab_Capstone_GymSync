@@ -80,11 +80,14 @@ const Modal = ({ isOpen, onClose, postDetails }) => {
         alert("Please enter at least one value for Reps, Sets, or Weight");
         return;
       }
-      const res = await fetch("/api/history/save", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://gymsync-server.vercel.app/api/history/save",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       console.log("data: ", data);
       if (data.error) {
@@ -207,7 +210,9 @@ const HomePage = () => {
   useEffect(() => {
     const getFeedPost = async () => {
       try {
-        const res = await fetch("/api/posts/feed");
+        const res = await fetch(
+          "https://gymsync-server.vercel.app/api/posts/feed"
+        );
         const data = await res.json();
         if (data.error) {
           alert(data.error);
