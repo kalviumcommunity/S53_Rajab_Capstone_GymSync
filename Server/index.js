@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const corsOptions = {
-  origin: ["https://gymsync-server.vercel.app","http://localhost:3000"],
+  origin: ["http://localhost:3000"],
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
