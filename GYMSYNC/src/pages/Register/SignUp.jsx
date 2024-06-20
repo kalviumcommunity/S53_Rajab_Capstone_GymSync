@@ -15,13 +15,16 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/users/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inputs),
-      });
+      const res = await fetch(
+        "https://gymsync-server.vercel.app/api/users/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(inputs),
+        }
+      );
       const data = await res.json();
       if (data.error) {
         alert(data.error);

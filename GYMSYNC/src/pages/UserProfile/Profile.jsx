@@ -12,7 +12,9 @@ const Profile = () => {
     const getPosts = async () => {
       setFetchingPost(true);
       try {
-        const res = await fetch(`/api/users/profile/${id}`);
+        const res = await fetch(
+          `https://gymsync-server.vercel.app/api/users/profile/${id}`
+        );
         const data = await res.json();
         console.log("data: ", data);
         setUser(data);

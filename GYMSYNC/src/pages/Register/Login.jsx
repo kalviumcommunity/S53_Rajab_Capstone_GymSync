@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import authScreenAtom from "../../atoms/authAtoms";
 import userAtom from "../../atoms/userAtoms";
+import axios from "axios";
+
 const Login = () => {
   const setAuthScreenState = useSetRecoilState(authScreenAtom);
   const setUser = useSetRecoilState(userAtom);
@@ -11,27 +13,24 @@ const Login = () => {
     username: "",
     password: "",
   });
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch("/api/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inputs),
-      });
-      const data = await res.json();
-      if (data.error) {
-        alert(data.error);
-        return;
-      }
 
-      localStorage.setItem("user-gymSync", JSON.stringify(data));
-      setUser(data);
-    } catch (error) {
-      alert(error);
-    }
+    axios
+      .post("http://localhost:5000/api/users/login", inputs)
+      .then((response) => {
+        const data = response.data;
+        if (data.error) {
+          console.log(data.error);
+          return;
+        }
+
+        localStorage.setItem("user-gymSync", JSON.stringify(data));
+        setUser(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
