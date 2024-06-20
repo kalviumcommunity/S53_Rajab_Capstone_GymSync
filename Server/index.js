@@ -16,8 +16,6 @@ app.use(express.urlencoded({ extended: true })); // to parse form data in the re
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-// http://localhost:3000 Front End
-// http://localhost:8000 BACKEND
 //Routes
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
