@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/api/users/login", inputs)
+      .post("/api/users/login", inputs)
       .then((response) => {
         const data = response.data;
         if (data.error) {
