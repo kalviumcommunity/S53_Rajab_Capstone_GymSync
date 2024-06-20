@@ -81,7 +81,7 @@ const Modal = ({ isOpen, onClose, postDetails }) => {
         return;
       }
       const res = await fetch(
-        "https://gymsync-server.vercel.app/api/history/save",
+        "/api/history/save",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

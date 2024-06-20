@@ -16,7 +16,7 @@ const SignUp = () => {
 
     try {
       const res = await fetch(
-        "https://gymsync-server.vercel.app/api/users/signup",
+        "/api/users/signup",
         {
           method: "POST",
           headers: {

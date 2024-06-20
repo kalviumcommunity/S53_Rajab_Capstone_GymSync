@@ -24,7 +24,7 @@ const History = () => {
     const getHistory = async () => {
       try {
         const res = await fetch(
-          `https://gymsync-server.vercel.app/api/history/historydata/${userId}`
+          `/api/history/historydata/${userId}`
         );
         const data = await res.json();
         if (data.error) {

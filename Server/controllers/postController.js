@@ -41,4 +41,3 @@ const getFeedPosts = async (req, res) => {
 };
 
 export { getFeedPosts, createPost };
-// export { createPost, getFeedPosts, getPost };

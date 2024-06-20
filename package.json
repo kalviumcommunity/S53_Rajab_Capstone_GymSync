@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "cloudinary": "^2.2.0",
     "cloudinary-react": "^1.8.1",
     "cookie-parser": "^1.4.6",
@@ -18,8 +19,9 @@
     "node": "18.x"
   },
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon Server/index.js",
+    "start": "node Server/index.js",
+    "build": "npm install && npm install --prefix GYMSYNC && npm run build --prefix GYMSYNC"
   },
   "type": "module",
   "keywords": [],
