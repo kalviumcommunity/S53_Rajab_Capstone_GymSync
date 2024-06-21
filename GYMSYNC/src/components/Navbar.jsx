@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Cookies from "js-cookie"; 
 
 const Navbar = () => {
+  //handling logout functionality
   const handleLogout = () => {
     Cookies.remove("jwt"); 
     localStorage.removeItem("user-gymSync");
