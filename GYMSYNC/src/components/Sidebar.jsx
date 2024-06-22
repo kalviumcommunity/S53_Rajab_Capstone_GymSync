@@ -1,65 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import { Home2 } from "iconsax-react";
 import { User } from "iconsax-react";
 import { Notification } from "iconsax-react";
 import { CalendarSearch } from "iconsax-react";
 import { Category } from "iconsax-react";
-
+import { Link } from "react-router-dom";
+import "./Components.css";
 const Sidebar = () => {
+  const [currentPage, setCurrentPage] = useState("home");
+  let user = localStorage.getItem("user-gymSync");
+  let parsedUser = JSON.parse(user);
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   return (
     <div className="SidebarParent">
-      
       <div className="parent-container">
-        <div className="SideBarIcons">
-          {/* HOME ICON */}
-          <Home2
-            className="insideIcons"
-            size="24"
-            style={{ transition: "color 0.3s", color: "#ffffff" }}
-            onMouseEnter={(e) => (e.target.style.color = "#000000")}
-            onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
-          />
-        </div>
-        <div className="SideBarIcons">
-          {/* USER ICON */}
-          <User
-            className="insideIcons"
-            size="24"
-            style={{ transition: "color 0.3s", color: "#ffffff" }}
-            onMouseEnter={(e) => (e.target.style.color = "#000000")}
-            onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
-          />
-        </div>
-        <div className="SideBarIcons">
-          {/* NOTIFICATION ICON */}
-          <Notification
-            className="insideIcons"
-            size="24"
-            style={{ transition: "color 0.3s", color: "#ffffff" }}
-            onMouseEnter={(e) => (e.target.style.color = "#000000")}
-            onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
-          />
-        </div>
-        <div className="SideBarIcons">
-          {/* HISTORY ICON */}
-          <CalendarSearch
-            className="insideIcons"
-            size="24"
-            style={{ transition: "color 0.3s", color: "#ffffff" }}
-            onMouseEnter={(e) => (e.target.style.color = "#000000")}
-            onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
-          />{" "}
-        </div>
-        <div className="SideBarIcons">
-          {/* SETTINGS ICON */}
-          <Category
-            className="insideIcons"
-            size="24"
-            style={{ transition: "color 0.3s", color: "#ffffff" }}
-            onMouseEnter={(e) => (e.target.style.color = "#000000")}
-            onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
-          />{" "}
-        </div>
+        <Link style={{ textDecoration: "none" }} to="/">
+          <div className="SideBarIcons">
+            {/* HOME ICON */}
+            <Home2
+              className="insideIcons"
+              size="24"
+              style={{ transition: "color 0.3s", color: "#ffffff" }}
+            />
+          </div>
+        </Link>
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`/profile/${parsedUser._id}`}
+        >
+          <div className="SideBarIcons">
+            {/* USER ICON */}
+            <User
+              className="insideIcons"
+              size="24"
+              style={{ transition: "color 0.3s", color: "#ffffff" }}
+            />
+          </div>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/notification">
+          <div className="SideBarIcons">
+            {/* NOTIFICATION ICON */}
+            <Notification
+              className="insideIcons"
+              size="24"
+              style={{ transition: "color 0.3s", color: "#ffffff" }}
+            />
+          </div>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/history">
+          <div className="SideBarIcons">
+            {/* HISTORY ICON */}
+            <CalendarSearch
+              className="insideIcons"
+              size="24"
+              style={{ transition: "color 0.3s", color: "#ffffff" }}
+            />{" "}
+          </div>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/">
+          <div className="SideBarIcons">
+            {/* SETTINGS ICON */}
+            <Category
+              className="insideIcons"
+              size="24"
+              style={{ transition: "color 0.3s", color: "#ffffff" }}
+            />{" "}
+          </div>
+        </Link>
       </div>
     </div>
   );
