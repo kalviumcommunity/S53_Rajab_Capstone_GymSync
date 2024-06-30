@@ -1,5 +1,6 @@
 # GYMSYNC
 FRONT-END AND BACKEND :- https://gymsync-g0jj.onrender.com/
+
 FIGMA LINK :- [https://gymsync-g0jj.onrender.com/](https://www.figma.com/design/TavtAX9ZQ0SOkWMOIKEGKo/GYM?node-id=0-1&t=AgwggAuVWxap04vQ-1)
 
 
