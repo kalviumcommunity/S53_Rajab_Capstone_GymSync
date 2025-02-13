@@ -1,6 +1,6 @@
 # GYMSYNC
 
-FRONT-END AND BACKEND :- https://gymsync-rjcd.onrender.com
+DEPLOYED LINK :- https://gymsync-rjcd.onrender.com
 
 FIGMA LINK :- https://www.figma.com/design/TavtAX9ZQ0SOkWMOIKEGKo/GYM?node-id=0-1&t=AgwggAuVWxap04vQ-1
 
